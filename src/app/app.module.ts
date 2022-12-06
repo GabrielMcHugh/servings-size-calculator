@@ -7,13 +7,17 @@ import { MeasuringToolsComponent } from './measuring-tools/measuring-tools.compo
 import { MeasuringToolsListComponent } from './measuring-tools-list/measuring-tools-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { GlobalService } from './global.service';
+import { HomePageComponent } from './home-page/home-page.component';
+import { MeasureInputComponent } from './measure-input/measure-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MeasuringToolsComponent,
     MeasuringToolsListComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomePageComponent,
+    MeasureInputComponent
   ],
   imports: [
     BrowserModule,

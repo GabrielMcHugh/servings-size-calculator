@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MeasuringToolsComponent } from './measuring-tools/measuring-tools.component';
 import { MeasuringToolsListComponent } from './measuring-tools-list/measuring-tools-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { GlobalService } from './global.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [GlobalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

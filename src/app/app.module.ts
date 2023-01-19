@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { GlobalService } from './global.service';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MeasureInputComponent } from './measure-input/measure-input.component';
+import { OthersComponent } from './others/others.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MeasureInputComponent } from './measure-input/measure-input.component';
     MeasuringToolsListComponent,
     NavbarComponent,
     HomePageComponent,
-    MeasureInputComponent
+    MeasureInputComponent,
+    OthersComponent
   ],
   imports: [
     BrowserModule,

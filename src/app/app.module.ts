@@ -10,6 +10,7 @@ import { GlobalService } from './global.service';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MeasureInputComponent } from './measure-input/measure-input.component';
 import { OthersComponent } from './others/others.component';
+import { MeasurementListComponent } from './measurement-list/measurement-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { OthersComponent } from './others/others.component';
     NavbarComponent,
     HomePageComponent,
     MeasureInputComponent,
-    OthersComponent
+    OthersComponent,
+    MeasurementListComponent
   ],
   imports: [
     BrowserModule,

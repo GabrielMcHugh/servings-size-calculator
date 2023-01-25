@@ -1,5 +1,7 @@
 <select name="measurement"
-    id="measurement">
+    id="measurement"
+    (change)="addNewMeasurer($event)"
+    >
     <optgroup label="Cups">
         <option value="1 cup">1 Cup</option>
         <option value="1/2 cup">1/2 Cup</option>

@@ -7,17 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeasuringToolsListComponent implements OnInit {
 
-  array: number[];
+  measuringTools: string[];
 
   constructor() {
-    this.array = [1]
+    this.measuringTools = ['']
   }
 
   ngOnInit(): void {
   }
 
   addServingInput() {
-    this.array.push(this.array.length + 1)
+    this.measuringTools.push()
   }
 
 }

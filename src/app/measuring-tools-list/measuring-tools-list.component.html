@@ -1,7 +1,7 @@
 <div class="host">
     <h3>Available Measuring Items</h3>
-    <div *ngFor="let number of array;">
-        <app-measuring-tools>{{number}}</app-measuring-tools>
+    <div *ngFor="let measurer of measuringTools;">
+        <app-measuring-tools>{{measurer}}</app-measuring-tools>
     </div>
     <button (click)="addServingInput()">+</button>
 </div>

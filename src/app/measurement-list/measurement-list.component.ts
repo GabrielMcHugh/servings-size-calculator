@@ -6,16 +6,16 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./measurement-list.component.scss']
 })
 export class MeasurementListComponent implements OnInit {
-  @Output() newMeasurerEvent = new EventEmitter<Event>();
+  @Output() newMeasurerEvent = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  addNewMeasurer($event: Event) {
-    this.newMeasurerEvent.emit($event)
-    console.log($event)
+  addNewMeasurer(option: string) {
+    this.newMeasurerEvent.emit(option)
+    console.log(option)
   }
 
 }

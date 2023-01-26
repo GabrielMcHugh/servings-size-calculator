@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-measuring-tools-list',
@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MeasuringToolsListComponent implements OnInit {
 
   measuringTools: string[];
+  @Input() utensils: [] = [];
 
   constructor() {
     this.measuringTools = ['']
@@ -17,7 +18,7 @@ export class MeasuringToolsListComponent implements OnInit {
   }
 
   addServingInput() {
-    this.measuringTools.push()
+    this.measuringTools.push('')
   }
 
 }

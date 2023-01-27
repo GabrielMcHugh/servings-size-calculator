@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeasuringToolsComponent implements OnInit {
 
-  constructor() { }
+  measuringTools: MeasuringTools = {
+    cups: ['1', '1/2', '1/3', '1/4'],
+    tablespoons: ['1', '1/2', '1/3', '1/4'],
+    teaspoons: ['1', '1/2', '1/3', '1/4'],
+  }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

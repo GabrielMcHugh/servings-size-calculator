@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MeasuringTools } from '../measuring-tools/MeasuringTools';
 
 @Component({
   selector: 'app-measurement-list',
@@ -6,6 +7,12 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./measurement-list.component.scss']
 })
 export class MeasurementListComponent implements OnInit {
+
+  @Input() tools: MeasuringTools = {
+    cups: [],
+    tablespoons: [],
+    teaspoons: []
+  };
   @Output() newMeasurerEvent = new EventEmitter<string>();
 
   constructor() { }

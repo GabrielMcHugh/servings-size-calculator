@@ -3,12 +3,12 @@
     (change)="addNewMeasurer(measurement.value)"
     >
     <optgroup label="Cups">
-        <option *ngFor="let tool of tools.cups" [value]="tool">{{tool}} Cups</option>
+        <option *ngFor="let tool of tools.Cups | keyvalue" [value]="tool">{{tool.key}}</option>
     </optgroup>
     <optgroup label="Tablespoon">
-        <option *ngFor="let tool of tools.tablespoons" [value]="tool">{{tool}} Tblspn</option>
+        <option *ngFor="let tool of tools.Tablespoons | keyvalue" [value]="tool">{{tool.key}}</option>
     </optgroup>
     <optgroup label="Teaspoon">
-        <option *ngFor="let tool of tools.teaspoons" [value]="tool">{{tool}} Tspn</option>
+        <option *ngFor="let tool of tools.Teaspoons | keyvalue" [value]="tool">{{tool.key}}</option>
     </optgroup>
 </select>

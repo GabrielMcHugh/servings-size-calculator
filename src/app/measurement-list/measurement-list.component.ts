@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MeasuringTools } from '../measuring-tools/MeasuringTools';
+import { UtensilsList } from '../types/UtensilsList';
 
 @Component({
   selector: 'app-measurement-list',
@@ -8,11 +8,7 @@ import { MeasuringTools } from '../measuring-tools/MeasuringTools';
 })
 export class MeasurementListComponent implements OnInit {
 
-  @Input() tools: MeasuringTools = {
-    cups: [],
-    tablespoons: [],
-    teaspoons: []
-  };
+  @Input() tools!: UtensilsList;
   @Output() newMeasurerEvent = new EventEmitter<string>();
 
   constructor() { }

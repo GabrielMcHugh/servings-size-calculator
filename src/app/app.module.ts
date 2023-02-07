@@ -11,6 +11,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { MeasureInputComponent } from './measure-input/measure-input.component';
 import { OthersComponent } from './others/others.component';
 import { MeasurementListComponent } from './measurement-list/measurement-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MeasurementListComponent } from './measurement-list/measurement-list.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [GlobalService],
   bootstrap: [AppComponent]

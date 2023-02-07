@@ -1,14 +1,15 @@
 <select name="measurement"
     #measurement
-    (change)="addNewMeasurer(measurement.value)"
+    [(ngModel)]="selected"
+    (change)="addNewMeasurer($any($event.target).value)"
     >
     <optgroup label="Cups">
-        <option *ngFor="let tool of tools.Cups | keyvalue" [value]="tool">{{tool.key}}</option>
+        <option *ngFor="let tool of tools.Cups | keyvalue" [value]="tool.key">{{tool.key}}</option>
     </optgroup>
     <optgroup label="Tablespoon">
-        <option *ngFor="let tool of tools.Tablespoons | keyvalue" [value]="tool">{{tool.key}}</option>
+        <option *ngFor="let tool of tools.Tablespoons | keyvalue" [value]="tool.key">{{tool.key}}</option>
     </optgroup>
     <optgroup label="Teaspoon">
-        <option *ngFor="let tool of tools.Teaspoons | keyvalue" [value]="tool">{{tool.key}}</option>
+        <option *ngFor="let tool of tools.Teaspoons | keyvalue" [value]="tool.key">{{tool.key}}</option>
     </optgroup>
 </select>

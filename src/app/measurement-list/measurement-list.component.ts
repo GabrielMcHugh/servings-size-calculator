@@ -7,6 +7,7 @@ import { UtensilsList } from '../types/UtensilsList';
   styleUrls: ['./measurement-list.component.scss']
 })
 export class MeasurementListComponent implements OnInit {
+  selected: string = '';
 
   @Input() tools!: UtensilsList;
   @Output() newMeasurerEvent = new EventEmitter<string>();
@@ -16,9 +17,10 @@ export class MeasurementListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addNewMeasurer(option: string) {
+  addNewMeasurer(option: any) {
     this.newMeasurerEvent.emit(option)
     console.log(option)
+    console.log(this.selected)
   }
 
 }

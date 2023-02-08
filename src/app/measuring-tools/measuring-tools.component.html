@@ -1,5 +1,5 @@
 <div class="divider"></div>
-<app-measurement-list [tools]="measuringTools"></app-measurement-list>
+<app-measurement-list [tools]="measuringTools" (newMeasurerEvent)="measurerSelected($event)"></app-measurement-list>
 <input type="text"
     style="border-width: 2px;"
     name="calculator">

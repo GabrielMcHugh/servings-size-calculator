@@ -17,9 +17,8 @@ export class MeasurementListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addNewMeasurer(option: any) {
-    this.newMeasurerEvent.emit(option)
-    console.log(option)
+  addNewMeasurer() {
+    this.newMeasurerEvent.emit(this.selected)
     console.log(this.selected)
   }
 

@@ -37,4 +37,12 @@ export class MeasuringToolsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  measurerSelected(tool: string): void {
+    if (tool.includes("cup")) {
+      this.measuringTools.Cups[tool] = !this.measuringTools.Cups[tool]
+    }
+
+    console.log('tools', this.measuringTools)
+  }
+
 }

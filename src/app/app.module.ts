@@ -12,6 +12,7 @@ import { MeasureInputComponent } from './measure-input/measure-input.component';
 import { OthersComponent } from './others/others.component';
 import { MeasurementListComponent } from './measurement-list/measurement-list.component';
 import { FormsModule } from '@angular/forms';
+import { ToolListFilterPipe } from './pipes/toolListFilter/tool-list-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     HomePageComponent,
     MeasureInputComponent,
     OthersComponent,
-    MeasurementListComponent
+    MeasurementListComponent,
+    ToolListFilterPipe
   ],
   imports: [
     BrowserModule,

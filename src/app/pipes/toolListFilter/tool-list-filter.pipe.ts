@@ -13,22 +13,24 @@ import { Utensils, UtensilsList } from 'src/app/types/UtensilsList';
  */
 export class ToolListFilterPipe implements PipeTransform {
   //caching values to save time on recalc
+  private filteredTools: string[] = []
   private prevTools: Utensils | undefined;
-  private latestTools: Utensils | undefined;
 
-  constructor(private shallowEqualityService: ShallowEqualityService) {}
+  constructor(private shallowEqualityService: ShallowEqualityService) { }
 
   transform(tools: Utensils): string[] {
-    //Needs some logic to deal with prev or latest being null
-
-    //Object comparison
-    if (this.shallowEqualityService.shallowEqual(this.prevTools, this.latestTools))
-
+    console.log('tools', tools, '\nprev tools\n', this.prevTools)
     if (!tools) return [];
 
-    let result = Object.keys(tools).filter(key => tools[key] === true)
+    //Object comparison
+    if (this.shallowEqualityService.shallowEqual(tools, this.prevTools)) {
+      return this.filteredTools
+    }
 
-    return result
+    this.prevTools = Object.assign({}, tools)
+    this.filteredTools = Object.keys(tools).filter(key => tools[key] === true)
+
+    return this.filteredTools
   }
 
 }

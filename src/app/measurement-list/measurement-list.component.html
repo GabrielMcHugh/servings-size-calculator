@@ -1,7 +1,7 @@
 <select name="measurement"
     #measurement
     [(ngModel)]="selected"
-    (change)="addNewMeasurer()"
+    (change)="addNewMeasurer($any($event.target))"
     >
     <optgroup label="Cups">
         <option *ngFor="let tool of tools.Cups | toolListFilter" [value]="tool">{{tool}}</option>

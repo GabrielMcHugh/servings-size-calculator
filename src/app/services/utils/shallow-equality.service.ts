@@ -7,8 +7,9 @@ export class ShallowEqualityService {
 
   constructor() { }
 
-  //Compares two flat objects
+  //Compares two flat objects and returns if they are equal
   public shallowEqual(object1: any, object2: any) {
+    if (!object1 || !object2) return false
 
     const keys1 = Object.keys(object1);
     const keys2 = Object.keys(object2);

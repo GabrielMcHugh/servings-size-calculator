@@ -1,9 +1,9 @@
-type Utensils = {
+interface Utensils {
     id: string, 
     selected: boolean, 
 };
 
-type UtensilsList = { 
+interface UtensilsList { 
     Cups: Utensils[],
     Tablespoons: Utensils[],
     Teaspoons: Utensils[]

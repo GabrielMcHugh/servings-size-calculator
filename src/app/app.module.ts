@@ -3,14 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MeasuringToolsComponent } from './measuring-tools/measuring-tools.component';
-import { MeasuringToolsListComponent } from './measuring-tools-list/measuring-tools-list.component';
+import { MeasuringToolsComponent } from './mTools/measuring-tools.component';
+import { MeasuringToolsListComponent } from './mTools-list/measuring-tools-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { GlobalService } from './global.service';
 import { HomePageComponent } from './home-page/home-page.component';
-import { MeasureInputComponent } from './measure-input/measure-input.component';
-import { OthersComponent } from './others/others.component';
-import { MeasurementListComponent } from './measurement-list/measurement-list.component';
+import { MeasureInputComponent } from './mInput/measure-input.component';
+import { OthersComponent } from './about/others.component';
+import { MeasurementListComponent } from './mList/measurement-list.component';
 import { FormsModule } from '@angular/forms';
 import { ToolListFilterPipe } from './pipes/toolListFilter/tool-list-filter.pipe';
 

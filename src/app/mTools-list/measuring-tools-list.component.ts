@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'app-measuring-tools-list',
@@ -6,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./measuring-tools-list.component.scss']
 })
 export class MeasuringToolsListComponent implements OnInit {
+  measuringTools: string[] = [''];
+  selectedTools: any;
 
   measuringTools1: UtensilsList = {
     Cups: [
@@ -28,14 +31,14 @@ export class MeasuringToolsListComponent implements OnInit {
     ]
   }
 
-  measuringTools: string[];
-  @Input() utensils: [] = [];
+  
 
-  constructor() {
-    this.measuringTools = ['']
-  }
+  constructor(private sharedService: SharedService) {}
 
   ngOnInit(): void {
+    this.sharedService.sharedMessage$.subscribe((value) => {
+      this.selectedTools = value
+    })
   }
 
   addServingInput() {

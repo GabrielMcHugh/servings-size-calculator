@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { UtensilsList } from '../types/UtensilsList';
+import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'app-measurement-list',
@@ -12,9 +12,13 @@ export class MeasurementListComponent implements OnInit {
   @Input() tools!: UtensilsList;
   @Output() newMeasurerEvent = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
+  }
+
+  onSelectedUtensil(utensil: string) {
+    this.sharedService.nextMessage(utensil)
   }
 
   addNewMeasurer(value: string) {

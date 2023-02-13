@@ -1,2 +1,10 @@
-export type Utensils = { [key: string]: boolean };
-export type UtensilsList = { [key: string]: Utensils };
+type Utensils = {
+    id: string, 
+    selected: boolean, 
+};
+
+type UtensilsList = { 
+    Cups: Utensils[],
+    Tablespoons: Utensils[],
+    Teaspoons: Utensils[]
+};

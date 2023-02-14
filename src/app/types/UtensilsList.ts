@@ -1,9 +1,9 @@
-interface Utensils {
+export interface Utensils {
     id: string, 
     selected: boolean, 
 };
 
-interface UtensilsList { 
+export interface UtensilsList { 
     Cups: Utensils[],
     Tablespoons: Utensils[],
     Teaspoons: Utensils[]

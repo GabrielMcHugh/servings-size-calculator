@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SharedService } from '../services/shared.service';
+import { UtensilsList } from '../types/UtensilsList';
 
 @Component({
   selector: 'app-measuring-tools-list',
@@ -10,39 +11,57 @@ export class MeasuringToolsListComponent implements OnInit {
   measuringTools: string[] = [''];
   selectedTools: any;
 
-  measuringTools1: UtensilsList = {
-    Cups: [
-      {id: '1 cup', selected: true},
-      {id: '1/2 cup', selected: true},
-      {id: '1/3 cup', selected: true},
-      {id: '1/4 cup', selected: true},
-    ],
-    Tablespoons: [
-      {id: '1 Tblsp', selected: true},
-      {id: '1/2 Tblsp', selected: true},
-      {id: '1/3 Tblsp', selected: true},
-      {id: '1/4 Tblsp', selected: true},
-    ],
-    Teaspoons: [
-      {id: '1 Tsp', selected: true},
-      {id: '1/2 Tsp', selected: true},
-      {id: '1/3 Tsp', selected: true},
-      {id: '1/4 Tsp', selected: true},
-    ]
-  }
+  utensilsList = [
+    { id: '1 cup', selected: false },
+    { id: '1/2 cup', selected: false },
+    { id: '1/3 cup', selected: false },
+    { id: '1/4 cup', selected: false },
 
-  
+    { id: '1 Tblsp', selected: false },
+    { id: '1/2 Tblsp', selected: false },
+    { id: '1/3 Tblsp', selected: false },
+    { id: '1/4 Tblsp', selected: false },
 
-  constructor(private sharedService: SharedService) {}
+    { id: '1 Tsp', selected: false },
+    { id: '1/2 Tsp', selected: false },
+    { id: '1/3 Tsp', selected: false },
+    { id: '1/4 Tsp', selected: false },
+  ]
+
+
+
+  constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
-    this.sharedService.sharedMessage$.subscribe((value) => {
-      this.selectedTools = value
+    this.sharedService.selectedUtensil$.subscribe((value) => {
+      if (!!value) {
+        this.updateUtensilsList(value)
+        this.setUtensilsList()
+      }
     })
+
+  }
+
+  setUtensilsList() {
+    this.sharedService.setUtensilList(this.utensilsList)
   }
 
   addServingInput() {
     this.measuringTools.push('')
   }
+
+  updateUtensilsList(value: any) {
+    
+    this.utensilsList.every(e => {
+      if (e.id === value) {
+        e.selected = !e.selected
+        console.log('selected', e)
+        return false
+      }
+      return true
+    })
+  }
+
+
 
 }

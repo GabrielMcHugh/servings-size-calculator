@@ -6,12 +6,21 @@ import { BehaviorSubject } from 'rxjs'
 })
 export class SharedService {
 
-  private message = new BehaviorSubject('First Message')
-  sharedMessage = this.message.asObservable()
+  private utensil$ = new BehaviorSubject({})
+  selectedUtensil$ = this.utensil$.asObservable()
+  private utensilList$ = new BehaviorSubject({})
+  selectedUtensilList$ = this.utensilList$.asObservable()
+
 
   constructor() { }
 
-  nextMessage(message: string) {
-    this.message.next(message)
+  setUtensil(utensil: string) {
+    console.log('utensil', utensil)
+    this.utensil$.next(utensil)
+  }
+  
+  setUtensilList(utensilList: any) {
+    console.log('utensilList', utensilList)
+    this.utensilList$.next(utensilList)
   }
 }

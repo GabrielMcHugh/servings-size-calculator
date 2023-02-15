@@ -14,13 +14,11 @@ export class SharedService {
 
   constructor() { }
 
-  setUtensil(utensil: string) {
-    console.log('utensil', utensil)
-    this.utensil$.next(utensil)
+  setUtensil(utensilUpdate: {utensil: string, prevUtensil: string}) {
+    this.utensil$.next(utensilUpdate)
   }
   
   setUtensilList(utensilList: any) {
-    console.log('utensilList', utensilList)
     this.utensilList$.next(utensilList)
   }
 }

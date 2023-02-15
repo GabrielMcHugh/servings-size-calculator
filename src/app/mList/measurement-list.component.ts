@@ -5,11 +5,11 @@ import { SharedService } from '../services/shared.service';
   selector: 'app-measurement-list',
   templateUrl: './measurement-list.component.html',
   styleUrls: ['./measurement-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MeasurementListComponent implements OnInit {
-  selected: string = '';
-  utlList: any;
+  prevSelected: string = ''
+  selected: string = ''
+  utlList: any
 
   constructor(private sharedService: SharedService) { }
 
@@ -20,7 +20,8 @@ export class MeasurementListComponent implements OnInit {
   }
 
   onSelectedUtensil() {
-    this.sharedService.setUtensil(this.selected)
+    this.sharedService.setUtensil({utensil: this.selected, prevUtensil: this.prevSelected})
+    this.prevSelected = this.selected
   }
 
   trackFn(index: any, tool: {id: string, selected: boolean}): string {

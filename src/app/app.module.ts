@@ -9,7 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { GlobalService } from './global.service';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MeasureInputComponent } from './mInput/measure-input.component';
-import { OthersComponent } from './about/others.component';
+import { OthersComponent } from './others/others.component';
 import { MeasurementListComponent } from './mList/measurement-list.component';
 import { FormsModule } from '@angular/forms';
 import { ToolListFilterPipe } from './pipes/toolListFilter/tool-list-filter.pipe';

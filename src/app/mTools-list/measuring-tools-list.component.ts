@@ -52,19 +52,19 @@ export class MeasuringToolsListComponent implements OnInit {
 
   updateUtensilsList(value: any) {
     
+    //select value
     this.utensilsList.every(e => {
       if (e.id === value.utensil) {
         e.selected = !e.selected
-        console.log('selected', e)
         return false
       }
       return true
     })
 
+    //unselect value
     this.utensilsList.every(e => {
       if (e.id === value.prevUtensil) {
         e.selected = !e.selected
-        console.log('selected', e)
         return false
       }
       return true

@@ -1,5 +1,7 @@
 <h3>Measurement</h3>
-<!-- <app-measurement-list [tools]="measuringTools"></app-measurement-list> -->
+<select name="measurement">
+    <option *ngFor="let tool of utensilsList" [value]="tool">{{tool}}</option>
+</select>
 <input type="text"
     style="border-width: 2px;"
     name="calculator">

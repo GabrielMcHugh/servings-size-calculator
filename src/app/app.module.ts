@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MeasuringToolsComponent } from './mTools/measuring-tools.component';
 import { MeasuringToolsListComponent } from './mTools-list/measuring-tools-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { GlobalService } from './global.service';
@@ -17,7 +16,6 @@ import { ToolListFilterPipe } from './pipes/toolListFilter/tool-list-filter.pipe
 @NgModule({
   declarations: [
     AppComponent,
-    MeasuringToolsComponent,
     MeasuringToolsListComponent,
     NavbarComponent,
     HomePageComponent,

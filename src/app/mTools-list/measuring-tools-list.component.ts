@@ -12,20 +12,18 @@ export class MeasuringToolsListComponent implements OnInit {
   selectedTools: any;
 
   utensilsList = [
-    { id: '1 cup', selected: false },
-    { id: '1/2 cup', selected: false },
-    { id: '1/3 cup', selected: false },
-    { id: '1/4 cup', selected: false },
+    { id: '1 cup', selected: false, serves: 0, volume: 236.588},
+    { id: '1/2 cup', selected: false, serves: 0, volume: 118.294},
+    { id: '1/3 cup', selected: false, serves: 0, volume: 78.86195687},
+    { id: '1/4 cup', selected: false, serves: 0, volume: 59.14706},
 
-    { id: '1 Tblsp', selected: false },
-    { id: '1/2 Tblsp', selected: false },
-    { id: '1/3 Tblsp', selected: false },
-    { id: '1/4 Tblsp', selected: false },
+    { id: '1 Tblsp', selected: false, serves: 0, volume: 14.7868},
+    { id: '1/2 Tblsp', selected: false, serves: 0, volume: 7.39338},
 
-    { id: '1 Tsp', selected: false },
-    { id: '1/2 Tsp', selected: false },
-    { id: '1/3 Tsp', selected: false },
-    { id: '1/4 Tsp', selected: false },
+    { id: '1 Tsp', selected: false, serves: 0, volume: 4.92892},
+    { id: '1/2 Tsp', selected: false, serves: 0, volume: 2.46446},
+    { id: '1/3 Tsp', selected: false, serves: 0, volume: 1.642956904},
+    { id: '1/4 Tsp', selected: false, serves: 0, volume: 1.23223},
   ]
 
 

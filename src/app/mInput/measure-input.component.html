@@ -1,8 +1,9 @@
 <h3>Measurement</h3>
-<select name="measurement">
+<select name="measurement" [(ngModel)]="selectedTool">
     <option *ngFor="let tool of utensilsList" [value]="tool">{{tool}}</option>
 </select>
 <input type="text"
     style="border-width: 2px;"
-    name="calculator">
-<button type="button">Calculate</button>
+    name="calculator"
+    [(ngModel)]="volume"
+    (ngModelChange)="setVolume()">

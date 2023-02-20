@@ -1,3 +1,4 @@
+<div class="divider">
 <select name="measurement"
     #measurement
     [(ngModel)]="selected"
@@ -5,3 +6,7 @@
     >
     <option *ngFor="let tool of utlList" [hidden]="tool.selected" [value]="tool.id">{{tool.id}}</option>
 </select>
+<input type="text"
+    style="border-width: 2px;"
+    name="calculator">
+</div>

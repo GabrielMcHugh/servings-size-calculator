@@ -11,7 +11,7 @@ export class SharedService {
   private utensilList$ = new BehaviorSubject({})
   selectedUtensilList$ = this.utensilList$.asObservable()
   private volume$ = new BehaviorSubject({})
-  setVolume$ = this.utensil$.asObservable()
+  changedVolume$ = this.volume$.asObservable()
 
 
   constructor() { }

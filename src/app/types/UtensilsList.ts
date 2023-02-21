@@ -1,10 +1,8 @@
 export interface Utensils {
     id: string, 
-    selected: boolean, 
+    selected: boolean,
+    serves: number,
+    volume: number,
 };
 
-export interface UtensilsList { 
-    Cups: Utensils[],
-    Tablespoons: Utensils[],
-    Teaspoons: Utensils[]
-};
+export interface UtensilsList extends Array<Utensils>{}

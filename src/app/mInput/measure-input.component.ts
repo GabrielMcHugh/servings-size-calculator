@@ -8,21 +8,21 @@ import { SharedService } from '../services/shared.service';
 })
 export class MeasureInputComponent implements OnInit {
   selectedTool: any;
-  volume: number = 0;
+  serves: number = 0;
 
   utensilsList = [
-    '1 cup',
-    '1/2 cup',
-    '1/3 cup',
-    '1/4 cup',
-    '1 Tblsp',
-    '1/2 Tblsp',
-    '1/3 Tblsp',
-    '1/4 Tblsp',
-    '1 Tsp',
-    '1/2 Tspn',
-    '1/3 Tspn',
-    '1/4 Tspn',
+    { id: '1 cup', volume: 236.588 },
+    { id: '1/2 cup', volume: 118.294 },
+    { id: '1/3 cup',volume: 78.86195687 },
+    { id: '1/4 cup', volume: 59.14706 },
+
+    { id: '1 Tblsp', volume: 14.7868 },
+    { id: '1/2 Tblsp',  volume: 7.39338 },
+
+    { id: '1 Tsp', volume: 4.92892 },
+    { id: '1/2 Tsp', volume: 2.46446 },
+    { id: '1/3 Tsp', volume: 1.642956904 },
+    { id: '1/4 Tsp', volume: 1.23223 },
   ]
 
   
@@ -32,7 +32,14 @@ export class MeasureInputComponent implements OnInit {
   }
 
   setVolume(): void {
-    this.sharedService.setVolume(this.volume)
+    let volume = 0
+    this.utensilsList.some(x => {
+      if (x.id === this.selectedTool) {
+        volume = x.volume * this.serves
+        return true
+      } else return false
+    })
+    this.sharedService.setVolume(volume)
   }
 
 }

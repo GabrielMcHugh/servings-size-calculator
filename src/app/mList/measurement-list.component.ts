@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SharedService } from '../services/shared.service';
+import { Utensils, UtensilsList } from '../types/UtensilsList';
 
 @Component({
   selector: 'app-measurement-list',
@@ -9,6 +10,7 @@ import { SharedService } from '../services/shared.service';
 export class MeasurementListComponent implements OnInit {
   prevSelected: string = ''
   selected: string = ''
+  serves: number = 0
   utlList: any
 
   constructor(private sharedService: SharedService) { }
@@ -16,17 +18,21 @@ export class MeasurementListComponent implements OnInit {
   ngOnInit(): void {
     this.sharedService.selectedUtensilList$.subscribe((value) => {
       this.utlList = value
+      this.updateServes(value as UtensilsList)
+    })
+  }
+
+  updateServes(value: UtensilsList) {
+    value.forEach(x => {
+      if (x.id === this.selected) {
+        this.serves = x.serves
+      }
     })
   }
 
   onSelectedUtensil() {
     this.sharedService.setUtensil({utensil: this.selected, prevUtensil: this.prevSelected})
     this.prevSelected = this.selected
-  }
-
-  trackFn(index: any, tool: {id: string, selected: boolean}): string {
-    const uID = tool.id + tool.selected.toString()
-    return uID
   }
 
 }

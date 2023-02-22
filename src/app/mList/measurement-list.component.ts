@@ -13,6 +13,8 @@ export class MeasurementListComponent implements OnInit {
   serves: number = 0
   utlList: any
 
+  @Output() removeItemEvent = new EventEmitter<string>()
+
   constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
@@ -35,8 +37,10 @@ export class MeasurementListComponent implements OnInit {
     this.prevSelected = this.selected
   }
 
+  //Must remove utensil from the list and trigger recalculation of measuring list
   removeUtensil() {
     console.log('remove Utensil')
+    this.removeItemEvent.emit(this.selected)
   }
 
 }

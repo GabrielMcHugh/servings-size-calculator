@@ -67,7 +67,7 @@ export class MeasuringToolsListComponent implements OnInit {
       return true
     })
 
-    //unselect value
+    //unselect prev value
     this.utensilsList.every(e => {
       if (e.id === value.prevUtensil) {
         e.selected = !e.selected
@@ -89,6 +89,17 @@ export class MeasuringToolsListComponent implements OnInit {
         x.serves = 0
       }
     })
+  }
 
+  removeItem(selected: string, index: number) {
+    //remove item from array, unselect utensil, recalculate volume
+    this.measuringTools.splice(index, 1)
+    this.utensilsList.every(e => {
+      if (e.id === selected) {
+        e.selected = false
+        return false
+      } else return true
+    })
+    this.updateVolume()
   }
 }

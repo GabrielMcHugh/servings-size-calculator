@@ -91,7 +91,4 @@ export class MeasuringToolsListComponent implements OnInit {
     })
 
   }
-
-
-
 }

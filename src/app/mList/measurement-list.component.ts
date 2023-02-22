@@ -35,4 +35,8 @@ export class MeasurementListComponent implements OnInit {
     this.prevSelected = this.selected
   }
 
+  removeUtensil() {
+    console.log('remove Utensil')
+  }
+
 }

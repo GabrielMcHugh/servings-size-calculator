@@ -1,7 +1,9 @@
 <div class="host">
     <h3>Available Measuring Items</h3>
-    <div *ngFor="let measurer of measuringTools;">
-        <app-measurement-list></app-measurement-list>
+    <div *ngFor="let measurer of measuringTools; index as i;">
+        <div class="divider">
+            <app-measurement-list></app-measurement-list>
+        </div>
     </div>
     <button (click)="addServingInput()">+</button>
 </div>

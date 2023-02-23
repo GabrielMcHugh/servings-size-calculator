@@ -39,7 +39,7 @@ export class MeasurementListComponent implements OnInit {
 
   //Must remove utensil from the list and trigger recalculation of measuring list
   removeUtensil() {
-    console.log('remove Utensil')
+    console.log('remove Utensil', this.selected)
     this.removeItemEvent.emit(this.selected)
   }
 

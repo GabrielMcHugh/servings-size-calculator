@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SharedService } from '../services/shared.service';
-import { UtensilsList } from '../types/UtensilsList';
+import { Utensils, UtensilsList } from '../types/UtensilsList';
 
 @Component({
   selector: 'app-measuring-tools-list',
@@ -8,7 +8,7 @@ import { UtensilsList } from '../types/UtensilsList';
   styleUrls: ['./measuring-tools-list.component.scss']
 })
 export class MeasuringToolsListComponent implements OnInit {
-  measuringTools: string[] = [''];
+  measuringTools: number[] = [Date.now()];
   selectedTools: any;
   volume: number = 0
 
@@ -35,7 +35,7 @@ export class MeasuringToolsListComponent implements OnInit {
     this.sharedService.selectedUtensil$.subscribe((value) => {
       if (!!value) {
         this.updateUtensilsList(value)
-        this.updateVolume
+        this.updateVolume()
         this.setUtensilsList()
       }
     })
@@ -53,7 +53,7 @@ export class MeasuringToolsListComponent implements OnInit {
   }
 
   addServingInput() {
-    this.measuringTools.push('')
+    this.measuringTools.push(Date.now())
   }
 
   updateUtensilsList(value: any) {
@@ -101,5 +101,6 @@ export class MeasuringToolsListComponent implements OnInit {
       } else return true
     })
     this.updateVolume()
+    this.setUtensilsList()
   }
 }

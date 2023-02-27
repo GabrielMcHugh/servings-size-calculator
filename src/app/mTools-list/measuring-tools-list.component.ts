@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SharedService } from '../services/shared.service';
-import { Utensils, UtensilsList } from '../types/UtensilsList';
+import { ListID, Utensils, UtensilsList } from '../types/UtensilsList';
 
 @Component({
   selector: 'app-measuring-tools-list',
@@ -8,23 +8,23 @@ import { Utensils, UtensilsList } from '../types/UtensilsList';
   styleUrls: ['./measuring-tools-list.component.scss']
 })
 export class MeasuringToolsListComponent implements OnInit {
-  measuringTools: number[] = [Date.now()];
+  measuringTools: {order: number}[] = [{order: 1}];
   selectedTools: any;
   volume: number = 0
 
   utensilsList: UtensilsList = [
-    { id: '1 cup', selected: false, serves: 0, volume: 236.588 },
-    { id: '1/2 cup', selected: false, serves: 0, volume: 118.294 },
-    { id: '1/3 cup', selected: false, serves: 0, volume: 78.86195687 },
-    { id: '1/4 cup', selected: false, serves: 0, volume: 59.14706 },
+    { id: '1 cup', selected: false, serves: 0, volume: 236.588, order: 1},
+    { id: '1/2 cup', selected: false, serves: 0, volume: 118.294, order: 2},
+    { id: '1/3 cup', selected: false, serves: 0, volume: 78.86195687, order: 3},
+    { id: '1/4 cup', selected: false, serves: 0, volume: 59.14706, order: 4},
 
-    { id: '1 Tblsp', selected: false, serves: 0, volume: 14.7868 },
-    { id: '1/2 Tblsp', selected: false, serves: 0, volume: 7.39338 },
+    { id: '1 Tblsp', selected: false, serves: 0, volume: 14.7868, order: 5},
+    { id: '1/2 Tblsp', selected: false, serves: 0, volume: 7.39338, order: 6},
 
-    { id: '1 Tsp', selected: false, serves: 0, volume: 4.92892 },
-    { id: '1/2 Tsp', selected: false, serves: 0, volume: 2.46446 },
-    { id: '1/3 Tsp', selected: false, serves: 0, volume: 1.642956904 },
-    { id: '1/4 Tsp', selected: false, serves: 0, volume: 1.23223 },
+    { id: '1 Tsp', selected: false, serves: 0, volume: 4.92892, order: 7},
+    { id: '1/2 Tsp', selected: false, serves: 0, volume: 2.46446, order: 8},
+    { id: '1/3 Tsp', selected: false, serves: 0, volume: 1.642956904, order: 9},
+    { id: '1/4 Tsp', selected: false, serves: 0, volume: 1.23223, order: 10},
   ]
 
 
@@ -53,7 +53,7 @@ export class MeasuringToolsListComponent implements OnInit {
   }
 
   addServingInput() {
-    this.measuringTools.push(Date.now())
+    this.measuringTools.push({order: 1})
   }
 
   updateUtensilsList(value: any) {

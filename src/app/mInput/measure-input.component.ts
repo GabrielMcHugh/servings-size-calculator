@@ -11,6 +11,8 @@ export class MeasureInputComponent implements OnInit {
   serves: number = 0;
 
   utensilsList = [
+    { id: 'liters', volume: 1000},
+    { id: 'milliliters', volume: 1},
     { id: '1 cup', volume: 236.588 },
     { id: '1/2 cup', volume: 118.294 },
     { id: '1/3 cup',volume: 78.86195687 },

@@ -11,17 +11,22 @@ export class MeasurementListComponent implements OnInit {
   prevSelected: string = ''
   selected: string = ''
   serves: number = 0
+  uID: number;
   utlList: any
 
+  @Output() setID = new EventEmitter<number>()
   @Output() removeItemEvent = new EventEmitter<string>()
 
-  constructor(private sharedService: SharedService) { }
+  constructor(private sharedService: SharedService,) { 
+    this.uID = Date.now() 
+  }
 
   ngOnInit(): void {
     this.sharedService.selectedUtensilList$.subscribe((value) => {
       this.utlList = value
       this.updateServes(value as UtensilsList)
     })
+    this.setID.emit(this.uID)
   }
 
   updateServes(value: UtensilsList) {
@@ -33,7 +38,7 @@ export class MeasurementListComponent implements OnInit {
   }
 
   onSelectedUtensil() {
-    this.sharedService.setUtensil({utensil: this.selected, prevUtensil: this.prevSelected})
+    this.sharedService.setUtensil({utensil: this.selected, prevUtensil: this.prevSelected, uID: this.uID})
     this.prevSelected = this.selected
   }
 

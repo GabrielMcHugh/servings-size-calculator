@@ -9,6 +9,7 @@ export interface Utensils {
 export interface UtensilsList extends Array<Utensils>{}
 
 export interface ListID {
-    id: number;
-    tool: string;
+    utensil: string, 
+    prevUtensil: string,
+    uID: number
 }

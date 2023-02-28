@@ -6,8 +6,9 @@ import { UtensilsList } from 'src/app/types/UtensilsList';
 })
 export class SortListPipe implements PipeTransform {
 
-  transform(value: UtensilsList, ...args: unknown[]): UtensilsList {
-    return value.filter(x => x.selected === true).sort((a, b) => a.order - b.order);
+  transform(value: {uID: number, order: number}[], ...args: unknown[]): {uID: number, order: number}[] {
+    console.log('sorting taking place')
+    return value.sort((a, b) => a.order - b.order);
   }
 
 }

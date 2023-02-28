@@ -8,26 +8,25 @@ import { ListID, Utensils, UtensilsList } from '../types/UtensilsList';
   styleUrls: ['./measuring-tools-list.component.scss']
 })
 export class MeasuringToolsListComponent implements OnInit {
-  measuringTools: {order: number}[] = [{order: 1}];
+  measuringTools: { uID: number, order: number }[] = [];
+  uidCounter: number = 0
   selectedTools: any;
   volume: number = 0
 
   utensilsList: UtensilsList = [
-    { id: '1 cup', selected: false, serves: 0, volume: 236.588, order: 1},
-    { id: '1/2 cup', selected: false, serves: 0, volume: 118.294, order: 2},
-    { id: '1/3 cup', selected: false, serves: 0, volume: 78.86195687, order: 3},
-    { id: '1/4 cup', selected: false, serves: 0, volume: 59.14706, order: 4},
+    { id: '1 cup', selected: false, serves: 0, volume: 236.588, order: 1 },
+    { id: '1/2 cup', selected: false, serves: 0, volume: 118.294, order: 2 },
+    { id: '1/3 cup', selected: false, serves: 0, volume: 78.86195687, order: 3 },
+    { id: '1/4 cup', selected: false, serves: 0, volume: 59.14706, order: 4 },
 
-    { id: '1 Tblsp', selected: false, serves: 0, volume: 14.7868, order: 5},
-    { id: '1/2 Tblsp', selected: false, serves: 0, volume: 7.39338, order: 6},
+    { id: '1 Tblsp', selected: false, serves: 0, volume: 14.7868, order: 5 },
+    { id: '1/2 Tblsp', selected: false, serves: 0, volume: 7.39338, order: 6 },
 
-    { id: '1 Tsp', selected: false, serves: 0, volume: 4.92892, order: 7},
-    { id: '1/2 Tsp', selected: false, serves: 0, volume: 2.46446, order: 8},
-    { id: '1/3 Tsp', selected: false, serves: 0, volume: 1.642956904, order: 9},
-    { id: '1/4 Tsp', selected: false, serves: 0, volume: 1.23223, order: 10},
+    { id: '1 Tsp', selected: false, serves: 0, volume: 4.92892, order: 7 },
+    { id: '1/2 Tsp', selected: false, serves: 0, volume: 2.46446, order: 8 },
+    { id: '1/3 Tsp', selected: false, serves: 0, volume: 1.642956904, order: 9 },
+    { id: '1/4 Tsp', selected: false, serves: 0, volume: 1.23223, order: 10 },
   ]
-
-
 
   constructor(private sharedService: SharedService) { }
 
@@ -52,16 +51,32 @@ export class MeasuringToolsListComponent implements OnInit {
     this.sharedService.setUtensilList(this.utensilsList)
   }
 
+  newListElement(uID: number) {
+    let last = this.measuringTools.pop()!
+    last.uID = uID
+    this.measuringTools.push(last)
+  }
+
   addServingInput() {
-    this.measuringTools.push({order: 1})
+    this.uidCounter = Date.now()
+    this.measuringTools.push({ uID: this.uidCounter, order: 11 })
   }
 
   updateUtensilsList(value: any) {
+    //get listElement
+    let listElement: { uID: number, order: number };
+    this.measuringTools.every(e => {
+      if (e.uID === value.uID) {
+        listElement = e
+        return false
+      } return true
+    })
 
     //select value
     this.utensilsList.every(e => {
       if (e.id === value.utensil) {
         e.selected = !e.selected
+        listElement.order = e.order
         return false
       }
       return true
@@ -75,6 +90,9 @@ export class MeasuringToolsListComponent implements OnInit {
       }
       return true
     })
+
+    //SortList
+    this.measuringTools.sort((a, b) => a.order - b.order)
   }
 
   updateVolume() {

@@ -11,8 +11,6 @@ import { MeasureInputComponent } from './mInput/measure-input.component';
 import { OthersComponent } from './others/others.component';
 import { MeasurementListComponent } from './mList/measurement-list.component';
 import { FormsModule } from '@angular/forms';
-import { ToolListFilterPipe } from './pipes/toolListFilter/tool-list-filter.pipe';
-import { SortListPipe } from './pipes/sortList/sort-list.pipe';
 
 @NgModule({
   declarations: [
@@ -23,8 +21,6 @@ import { SortListPipe } from './pipes/sortList/sort-list.pipe';
     MeasureInputComponent,
     OthersComponent,
     MeasurementListComponent,
-    ToolListFilterPipe,
-    SortListPipe,
   ],
   imports: [
     BrowserModule,

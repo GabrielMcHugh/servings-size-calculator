@@ -5,5 +5,6 @@
 <input type="text"
     style="border-width: 2px;"
     name="calculator"
+    [disabled]="!selectedTool"
     [(ngModel)]="serves"
     (ngModelChange)="setVolume()">

@@ -34,14 +34,14 @@ export class MeasuringToolsListComponent implements OnInit {
     this.sharedService.selectedUtensil$.subscribe((value) => {
       if (!!value) {
         this.updateUtensilsList(value)
-        this.updateVolume()
+        this.updateServes()
         this.setUtensilsList()
       }
     })
 
     this.sharedService.changedVolume$.subscribe((value) => {
-      this.volume = value as number
-      this.updateVolume()
+      if (typeof value === 'number') this.volume = value as number
+      this.updateServes()
       this.setUtensilsList()
     })
 
@@ -95,13 +95,30 @@ export class MeasuringToolsListComponent implements OnInit {
     this.measuringTools.sort((a, b) => a.order - b.order)
   }
 
-  updateVolume() {
+  //Updates the number of serves each utensil required of each selected utensil. Assumes
+  //list is sorted. 
+  updateServes() {
     let remainder = this.volume
-    //loop through the list of utensils and set their volumes assuming the list is sorted
+    let smallestTool: string | undefined;
+
+    //find the smallest selected utensil by looping backwards over the array.
+    for (let x = this.utensilsList.length - 1; x >= 0; x--) {
+      if (this.utensilsList[x].selected === true) {
+        smallestTool = this.utensilsList[x].id
+        break
+      }
+    }
+
+    if (!smallestTool) return
+
+
     this.utensilsList.forEach(x => {
       if (x.selected) {
-        let serves = (remainder / x.volume) >> 0
-        x.serves = serves
+        let serves = (remainder / x.volume)
+        if (x.id != smallestTool as string) {
+          serves >>= 0
+          x.serves = serves
+        } else x.serves = +serves.toFixed(2)
         remainder -= (x.volume * serves)
       } else {
         x.serves = 0
@@ -118,7 +135,7 @@ export class MeasuringToolsListComponent implements OnInit {
         return false
       } else return true
     })
-    this.updateVolume()
+    this.updateServes()
     this.setUtensilsList()
   }
 }

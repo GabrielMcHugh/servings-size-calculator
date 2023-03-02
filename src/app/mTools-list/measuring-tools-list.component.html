@@ -1,9 +1,10 @@
-<div class="host">
+<div class="host ">
     <h3>Available Measuring Items</h3>
     <div *ngFor="let measurer of measuringTools; index as i;">
         <div class="divider">
             <!-- <app-measurement-list (removeItemEvent)="removeItem($event, i)" [uID]="addServingInput()"></app-measurement-list> -->
-            <app-measurement-list (removeItemEvent)="removeItem($event, i)" (setID)="newListElement($event)"></app-measurement-list>
+            <app-measurement-list (removeItemEvent)="removeItem($event, i)"
+                (setID)="newListElement($event)"></app-measurement-list>
         </div>
     </div>
     <button (click)="addServingInput()">+</button>

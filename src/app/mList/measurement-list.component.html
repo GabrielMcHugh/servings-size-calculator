@@ -1,5 +1,6 @@
 <div class="divider">
     <select name="measurement"
+        class="select-border"
         #measurement
         [(ngModel)]="selected"
         (change)="onSelectedUtensil()">
@@ -8,8 +9,8 @@
             [value]="tool.id">{{tool.id}}</option>
     </select>
     <input type="text"
+        class="input-border"
         [readonly]="true"
-        style="border-width: 2px;"
         name="calculator"
         [(ngModel)]="serves">
     <button (click)="removeUtensil()">X</button>

@@ -1,12 +1,12 @@
 <h3>Measurement</h3>
 <select name="measurement"
-    class="bw-3 border-solid border-indigo-600"
+    class="select-border"
     [(ngModel)]="selectedTool">
     <option *ngFor="let tool of utensilsList"
         [value]="tool.id">{{tool.id}}</option>
 </select>
 <input type="text"
-    style="border-width: 2px;"
+    class="input-border"
     name="calculator"
     [disabled]="!selectedTool"
     [(ngModel)]="serves"

@@ -22,3 +22,18 @@
 .bw-4 {
     border-width: 5px;
 }
+
+.select-border {
+    padding-bottom: 1px;
+    border: 2px solid rgba(78, 70, 229, 0.626);
+    border-right: 0px;
+    background-color: rgba(251, 251, 251);
+    border-radius: 5px 0px 0px 5px ;
+}
+
+.input-border {
+    border: 2px solid rgba(78, 70, 229, 0.626);
+    border-left: 0px;
+    background-color: rgb(239, 239, 239);
+    border-radius: 0px 5px 5px 0px ;
+}

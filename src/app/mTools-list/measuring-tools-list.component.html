@@ -1,11 +1,13 @@
 <div class="host">
-    <h3>Available Measuring Items</h3>
-    <div *ngFor="let measurer of measuringTools; index as i;">
-        <div class="divider">
-            <!-- <app-measurement-list (removeItemEvent)="removeItem($event, i)" [uID]="addServingInput()"></app-measurement-list> -->
-            <app-measurement-list (removeItemEvent)="removeItem($event, i)"
-                (setID)="newListElement($event)"></app-measurement-list>
+    <h3>Measuring Items</h3>
+    <div class="flex-column">
+        <div *ngFor="let measurer of measuringTools; index as i;">
+            <div class="divider flex-container">
+                <app-measurement-list (removeItemEvent)="removeItem($event, i)"
+                    (setID)="newListElement($event)"></app-measurement-list>
+            </div>
         </div>
     </div>
-    <button (click)="addServingInput()">+</button>
+        <button class="button"
+            (click)="addServingInput()">+</button>
 </div>

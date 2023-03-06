@@ -36,3 +36,28 @@
     border: 2px solid rgba(78, 70, 229, 0.626);
     border-radius: 5px
 }
+
+.button {
+    border: 2px solid rgba(78, 70, 229, 0.626);
+    border-radius: 5px
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    float: left;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.block {
+    display:block
+}
+
+.host {
+    display: block
+}

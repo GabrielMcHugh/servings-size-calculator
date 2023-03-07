@@ -25,7 +25,7 @@
 
 .select-border {
     background-color: rgba(251, 251, 251);
-    border-radius: 5px 0px 0px 5px ;
+    border-radius: 5px 0px 0px 5px;
 }
 
 .input-border {
@@ -34,7 +34,7 @@
 
 .measuring-component {
     border: 2px solid rgba(78, 70, 229, 0.626);
-    border-radius: 5px
+    border-radius: 5px;
 }
 
 .button {
@@ -55,9 +55,14 @@
 }
 
 .block {
-    display:block
+    display: block
 }
 
 .host {
     display: block
+}
+
+.center {
+    margin: 0 auto;
+    width: 300px;
 }

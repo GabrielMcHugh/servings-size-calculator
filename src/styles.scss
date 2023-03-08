@@ -6,24 +6,12 @@
 $indigo: rgba(78, 70, 229, 0.626);
 $lightGrey:  rgb(216, 215, 215);
 
-.bw-1 {
-    border-width: 1px;
+html {
+    font-family: 'Inter', sans-serif;
 }
 
-.bw-2 {
-    border-width: 2px;
-}
-
-.bw-3 {
-    border-width: 3px;
-}
-
-.bw-4 {
-    border-width: 4px;
-}
-
-.bw-4 {
-    border-width: 5px;
+h3 {
+    font-size: large;
 }
 
 .select-border {
@@ -45,7 +33,9 @@ $lightGrey:  rgb(216, 215, 215);
     border: 2px solid $indigo;
     color: $indigo;
     border-radius: 5px;
-    padding: 0px 5px;
+    width: 28px;
+    height: 28px;
+    line-height: 0px;
     transition-duration: 0.2s;
 }
 
@@ -63,11 +53,6 @@ $lightGrey:  rgb(216, 215, 215);
     border-color: $indigo;
 }
 
-select:hover {
-    background-color: $indigo;
-    border: grey;
-    color: white;
-}
 
 .flex-container {
     display: flex;
@@ -91,5 +76,5 @@ select:hover {
 
 .center {
     margin: 0 auto;
-    width: 310px;
+    width: 358px;
 }

@@ -6,7 +6,8 @@
         <option *ngFor="let tool of utensilsList"
             [value]="tool.id">{{tool.id}}</option>
     </select>
-    <input type="text"
+    <input type="number"
+        min="0"
         class="input-border"
         name="calculator"
         [disabled]="!selectedTool"

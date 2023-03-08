@@ -5,6 +5,7 @@
 
 $indigo: rgba(78, 70, 229, 0.626);
 $lightGrey:  rgb(216, 215, 215);
+$lightRed: rgba(229, 70, 70, 0.626);
 
 html {
     font-family: 'Inter', sans-serif;
@@ -50,7 +51,8 @@ h3 {
 }
 
 .delButton:hover {
-    border-color: $indigo;
+    background-color: $lightRed;
+    border-color: $lightRed;
 }
 
 

@@ -3,6 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+$indigo: rgba(78, 70, 229, 0.626);
+
 .bw-1 {
     border-width: 1px;
 }
@@ -33,13 +35,28 @@
 }
 
 .measuring-component {
-    border: 2px solid rgba(78, 70, 229, 0.626);
+    border: 2px solid $indigo;
     border-radius: 5px;
+    margin-right: 10px; //need to adjust centering of measuring component (.center)
 }
 
 .button {
-    border: 2px solid rgba(78, 70, 229, 0.626);
-    border-radius: 5px
+    border: 2px solid $indigo;
+    color: $indigo;
+    border-radius: 5px;
+    padding: 0px 5px;
+    transition-duration: 0.2s;
+}
+
+.button:hover {
+    background-color: $indigo;
+    color: white;
+}
+
+select:hover {
+    background-color: $indigo;
+    border: grey;
+    color: white;
 }
 
 .flex-container {
@@ -64,5 +81,5 @@
 
 .center {
     margin: 0 auto;
-    width: 300px;
+    width: 310px;
 }

@@ -4,6 +4,7 @@
 @tailwind utilities;
 
 $indigo: rgba(78, 70, 229, 0.626);
+$lightGrey:  rgb(216, 215, 215);
 
 .bw-1 {
     border-width: 1px;
@@ -51,6 +52,15 @@ $indigo: rgba(78, 70, 229, 0.626);
 .button:hover {
     background-color: $indigo;
     color: white;
+}
+
+.delButton {
+    border: 2px solid $lightGrey;
+    color: $lightGrey;
+}
+
+.delButton:hover {
+    border-color: $indigo;
 }
 
 select:hover {

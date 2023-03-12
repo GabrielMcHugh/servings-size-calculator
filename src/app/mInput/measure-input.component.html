@@ -2,7 +2,8 @@
 <div class="measuring-component flex-container">
     <select name="measurement"
         class="select-border"
-        [(ngModel)]="selectedTool">
+        [(ngModel)]="selectedTool"
+        (ngModelChange)="setVolume()">
         <option *ngFor="let tool of utensilsList"
             [value]="tool.id">{{tool.id}}</option>
     </select>

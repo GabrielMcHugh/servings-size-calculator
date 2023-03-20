@@ -28,7 +28,8 @@ export class MeasureInputComponent implements OnInit {
   ]
 
 
-  constructor(private sharedService: SharedService) { }
+  constructor(private sharedService: SharedService) { 
+  }
 
   ngOnInit(): void {
   }

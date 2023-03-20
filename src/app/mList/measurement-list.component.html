@@ -1,17 +1,17 @@
-    <div class="measuring-component flex-container">
-        <select name="measurement"
-            #measurement
-            [(ngModel)]="selected"
-            (change)="onSelectedUtensil()">
-            <option *ngFor="let tool of utlList"
-                [hidden]="tool.selected"
-                [value]="tool.id">{{tool.id}}</option>
-        </select>
-        <input type="text"
-            class="input-border"
-            [readonly]="true"
-            name="calculator"
-            [(ngModel)]="serves">
-    </div>
-    <button class="button delButton"
-        (click)="removeUtensil()">x</button>
+<div class="measuring-component flex-container">
+    <select name="measurement"
+        #measurement
+        [(ngModel)]="selected"
+        (change)="onSelectedUtensil()">
+        <option *ngFor="let tool of utlList"
+            [hidden]="tool.selected"
+            [value]="tool.id">{{tool.id}}</option>
+    </select>
+    <input type="text"
+        class="input-border"
+        [readonly]="true"
+        name="calculator"
+        [(ngModel)]="serves">
+</div>
+<button class="button delButton"
+    (click)="removeUtensil()">x</button>

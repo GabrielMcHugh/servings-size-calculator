@@ -28,7 +28,9 @@ export class MeasuringToolsListComponent implements OnInit {
     { id: '1/4 Tsp', selected: false, serves: 0, volume: 1.23223, order: 10 },
   ]
 
-  constructor(private sharedService: SharedService) { }
+  constructor(private sharedService: SharedService) { 
+    console.log('utensils list is type: ', typeof this.utensilsList)
+  }
 
   ngOnInit(): void {
     this.sharedService.selectedUtensil$.subscribe((value) => {

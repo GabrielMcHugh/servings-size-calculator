@@ -29,7 +29,6 @@ export class MeasuringToolsListComponent implements OnInit {
   ]
 
   constructor(private sharedService: SharedService) { 
-    console.log('utensils list is type: ', typeof this.utensilsList)
   }
 
   ngOnInit(): void {

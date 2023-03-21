@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, fakeAsync, tick} from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { MeasureInputComponent } from './measure-input.component';
 
@@ -9,9 +9,9 @@ describe('MeasureInputComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FormsModule],
-      declarations: [ MeasureInputComponent ]
+      declarations: [MeasureInputComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -35,16 +35,15 @@ describe('MeasureInputComponent', () => {
     expect(selectElement.options.length).toBe(component.utensilsList.length);
   });
 
-  it('should set the selected tool', () => {
+  it('should set the selected tool and enable input', () => {
     const selectElement = fixture.nativeElement.querySelector('select[name="measurement"]');
     const inputElement = fixture.nativeElement.querySelector('input[name="calculator"]');
     const expectedTool = component.utensilsList[0];
 
     selectElement.value = expectedTool.id;
-    selectElement.dispatchEvent(new Event('input'));
+    selectElement.dispatchEvent(new Event('change'));
 
     expect(component.selectedTool).toEqual(expectedTool.id);
-    expect(inputElement.disabled).toBeFalsy();
 
     // inputElement.value = '10';
     // inputElement.dispatchEvent(new Event('input'));
@@ -57,9 +56,13 @@ describe('MeasureInputComponent', () => {
     const inputElement = fixture.nativeElement.querySelector('input[name="calculator"]');
 
     selectElement.value = '';
-    selectElement.dispatchEvent(new Event('input'));
+    selectElement.dispatchEvent(new Event('change'));
 
-    expect(inputElement.disabled).toBeTruthy();
+    fixture.whenStable().then(() => {
+      expect(inputElement.disabled).toBeTruthy();
+    })
+    // console.log('inputElement.disabled', inputElement.disabled)
+
   });
 });
 

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { MeasuringToolsListComponent } from './measuring-tools-list.component';
 
 describe('MeasuringToolsListComponent', () => {
@@ -8,9 +8,10 @@ describe('MeasuringToolsListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MeasuringToolsListComponent ]
+      imports: [FormsModule],
+      declarations: [MeasuringToolsListComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { MeasurementListComponent } from './measurement-list.component';
 
 describe('MeasurementListComponent', () => {
@@ -8,6 +8,7 @@ describe('MeasurementListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [FormsModule],
       declarations: [ MeasurementListComponent ]
     })
     .compileComponents();

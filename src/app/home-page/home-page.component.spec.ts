@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MeasureInputComponent } from '../mInput/measure-input.component';
+import { MeasuringToolsListComponent } from '../mTools-list/measuring-tools-list.component';
 import { HomePageComponent } from './home-page.component';
 
 describe('HomePageComponent', () => {
@@ -8,7 +9,11 @@ describe('HomePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomePageComponent ]
+      declarations: [ 
+        HomePageComponent,
+        MeasureInputComponent,
+        MeasuringToolsListComponent
+      ]
     })
     .compileComponents();
   });

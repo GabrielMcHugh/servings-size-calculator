@@ -1,4 +1,6 @@
-# servings-size-calculator
+# Utensilit
+#### Mix'n'match utensils converter
+A conversion calculator to help with servings sizes, where you input the measuring tools you have at hand and it will return the most efficient combination for a specified volume
 
 **Why**: I needed something to measure out my supplements before I premixed a batch
 
